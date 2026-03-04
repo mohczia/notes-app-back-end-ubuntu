@@ -4,10 +4,10 @@ import notes from "./notes.js";
 export const createNote = (req, res, next) => {
   const { title = 'untitle', tags, body } = req.body;
   const id = nanoid(16);
-  const createdAt = new Date().toISOString();
-  const updatedAt = createdAt;
+  const createAt = new Date().toISOString();
+  const updateAt = createAt;
  
-  const newNote = { id, tags, body, title, createdAt, updatedAt };
+  const newNote = { id, tags, body, title, createAt, updateAt };
   notes.push(newNote);
   
   const isSuccess = notes.filter((note) => note.id === id).length > 0;
@@ -56,11 +56,11 @@ export const getNoteById = (req, res) => {
 export const editNoteById = (req, res) => {
   const { id } = req.params;
   const { title, tags, body} = req.body;
-  const updatedAt = new Date().toISOString();
+  const updateAt = new Date().toISOString();
   const index =  notes.findIndex((n) => n.id === id);
 
   if (index !== -1 ) {
-    notes [index] = {...notes[index], title, tags, body, updatedAt};
+    notes [index] = {...notes[index], title, tags, body, updateAt};
     return res.json({
       status : 'success',
       message : 'catatan berhasil diperbarui',
@@ -85,7 +85,7 @@ export const deleteNoteById = (req,res) => {
       message : 'catatan berhasil dihapus'
     });
   } else {
-    return res.sta(404).json({
+    return res.status(404).json({
       status : 'fail',
       message : 'catatan gagal dihapus. id tidak ditemukan'
     })
