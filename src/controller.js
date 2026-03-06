@@ -63,7 +63,7 @@ export const editNoteById = (req, res) => {
     notes [index] = {...notes[index], title, tags, body, updateAt};
     return res.json({
       status : 'success',
-      message : 'catatan berhasil diperbarui',
+      message : 'Catatan berhasil diperbarui',
     });
   } else {
     return res.status(404).json({
