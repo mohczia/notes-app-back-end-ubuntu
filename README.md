@@ -11,11 +11,13 @@ This project provides basic CRUD operations for managing notes.
 
 ## 📂 Project Structure
 
+```
 src/
-controller.js
-notes.js
-routes.js
-server.js
+├── controller.js
+├── notes.js
+├── routes.js
+└── server.js
+```
 
 * **server.js** → Start the HTTP server
 * **routes.js** → Define API routes
@@ -42,27 +44,48 @@ server.js
 
 ## ⚙️ Installation
 
-Clone the repository
+Clone the repository:
 
-git clone https://github.com/mohczia/notes-app-back-end-ubuntu.git
+```
+git clone https://github.com/mohczia/notes-rest-api.git
+```
 
-Install dependencies
+Install dependencies:
 
+```
 npm install
+```
 
 ## ▶️ Run Server
 
+Start the server:
+
+```
 npm run start
+```
 
-Server will run on:
+### Local Server
 
+The server will run on:
+
+```
 http://localhost:3000
+```
+
+### Production Server
+
+Example deployed server:
+
+```
+http://13.215.199.191:3000
+```
 
 ## 🧪 API Testing
 
-API testing is done using Postman collection included in this repository.
+API testing is done using the Postman collection included in this repository.
 
 Files:
 
 * notes-api-test.postman_collection.json
-* notes-api-test.postman_environment.json
+* notes-api-local.postman_environment.json
+* notes-api-production.postman_environment.json
