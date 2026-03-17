@@ -1,3 +1,5 @@
-notes-api-webserver.pem
+notes-api-server.pem
 node_modules
-notes-api-webserver.pem:Zone.Identifier
+notes-api-server.pem:Zone.Identifier
+.env
+.prod.env
